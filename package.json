@@ -1,0 +1,36 @@
+{
+  "name": "3tier",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with Fastify-CLI.",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "NODE_ENV=test tap -Rspec test/**/*.test.js",
+    "start": "fastify start -l info app.js",
+    "dev": "fastify start -w -l info -P app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "tap": {
+    "nyc-arg": [
+      "--exclude=model/**/*.js",
+      "--exclude=plugins/mongodb.js"
+    ]
+  },
+  "dependencies": {
+    "@fastify/autoload": "^4.0.0",
+    "@fastify/cors": "^7.0.0",
+    "@fastify/mysql": "^3.0.0",
+    "@fastify/sensible": "^4.1.0",
+    "dotenv": "^10.0.0",
+    "fastify": "^3.27.2",
+    "fastify-cli": "^2.14.0",
+    "fastify-plugin": "^3.0.1"
+  },
+  "devDependencies": {
+    "tap": "^15.0.9"
+  }
+}
